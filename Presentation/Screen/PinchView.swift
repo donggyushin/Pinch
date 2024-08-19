@@ -71,6 +71,15 @@ public struct PinchView: View {
                     .animation(.default, value: magazineScale)
                     .animation(.default, value: magazineOffset)
                 Spacer()
+                
+                Controller {
+                    magazineScale = 1
+                } reset: {
+                    reset()
+                } zoomIn: {
+                    magazineScale = 5
+                }
+
             }
             .padding()
         }
