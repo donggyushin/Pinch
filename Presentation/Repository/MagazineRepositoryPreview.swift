@@ -1,15 +1,15 @@
 //
-//  MagazineRepositoryData.swift
-//  DataSource
+//  MagazineRepositoryPreview.swift
+//  Presentation
 //
 //  Created by 신동규 on 8/19/24.
 //
 
-import Domain
 import Combine
+import Domain
 import SwiftUI
 
-public final class MagazineRepositoryData: MagazineRepository {
+final class MagazineRepositoryPreview: MagazineRepository {
     public var magazines: AnyPublisher<[Image], Never> { $_magazines.eraseToAnyPublisher() }
     @Published var _magazines: [Image] = []
     
@@ -18,13 +18,13 @@ public final class MagazineRepositoryData: MagazineRepository {
     
     public init() {
         _magazines = [
-            .init("magazine-front-cover", bundle: .init(identifier: "com.donggyu.DataSource")),
-            .init("magazine-back-cover", bundle: .init(identifier: "com.donggyu.DataSource"))
+            .init("magazine-front-cover", bundle: .init(identifier: "com.donggyu.Presentation")),
+            .init("magazine-back-cover", bundle: .init(identifier: "com.donggyu.Presentation"))
         ]
         
         _thumbnails = [
-            .init("thumb-magazine-front-cover", bundle: .init(identifier: "com.donggyu.DataSource")),
-            .init("thumb-magazine-back-cover", bundle: .init(identifier: "com.donggyu.DataSource"))
+            .init("thumb-magazine-front-cover", bundle: .init(identifier: "com.donggyu.Presentation")),
+            .init("thumb-magazine-back-cover", bundle: .init(identifier: "com.donggyu.Presentation"))
         ]
     }
     

@@ -11,4 +11,6 @@ import SwiftUI
 public protocol MagazineRepository {
     var magazines: AnyPublisher<[Image], Never> { get }
     var thumbnails: AnyPublisher<[Image], Never> { get }
+    
+    func getMagazine() -> Image?
 }
