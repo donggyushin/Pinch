@@ -12,8 +12,13 @@ public struct PinchView: View {
     
     @State private var isAnimating: Bool = false
     @State private var magazineScale: CGFloat = 1
+    @State private var magazineOffset: CGSize = .zero
     @StateObject var viewModel: PinchViewModel
     
+    func reset() {
+        magazineScale = 1
+        magazineOffset = .zero
+    }
     
     public init(
         magazineRepository: MagazineRepository
@@ -28,19 +33,32 @@ public struct PinchView: View {
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .opacity(isAnimating ? 1 : 0)
+                    .offset(magazineOffset)
+                    .scaleEffect(magazineScale)
                     .shadow(radius: 12, x: 2, y: 2)
                     .padding()
-                    .opacity(isAnimating ? 1 : 0)
-                    .scaleEffect(magazineScale)
+                    .animation(.linear(duration: 1), value: isAnimating)
+                    .animation(.spring, value: magazineScale)
+                    .animation(.spring(duration: 0.5), value: magazineOffset)
                     .onTapGesture(count: 2) {
                         if magazineScale == 1 {
                             magazineScale = 5
                         } else {
-                            magazineScale = 1
+                            reset()
                         }
                     }
-                    .animation(.linear(duration: 1), value: isAnimating)
-                    .animation(.spring, value: magazineScale)
+                    .gesture(
+                        DragGesture()
+                            .onChanged { value in
+                                magazineOffset = value.translation
+                            }
+                            .onEnded { _ in
+                                if magazineScale <= 1 {
+                                    reset()
+                                }
+                            }
+                    )
                     .onAppear {
                         isAnimating = true
                     }
