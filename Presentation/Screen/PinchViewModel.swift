@@ -41,6 +41,11 @@ final class PinchViewModel: ObservableObject {
             .execute()
             .receive(on: DispatchQueue.main)
             .assign(to: &$magazines)
+        
+        subscribeThumbnailsUseCase
+            .execute()
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$thumbnails)
     }
     
     @MainActor
