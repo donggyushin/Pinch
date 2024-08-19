@@ -59,6 +59,19 @@ public struct PinchView: View {
                                 }
                             }
                     )
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged { value in
+                                magazineScale = value
+                            }
+                            .onEnded { _ in
+                                if magazineScale < 1 {
+                                    reset()
+                                } else if magazineScale > 5 {
+                                    magazineScale = 5
+                                }
+                            }
+                    )
                     .onAppear {
                         isAnimating = true
                     }
