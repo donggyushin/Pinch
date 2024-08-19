@@ -65,6 +65,14 @@ public struct PinchView: View {
             } else {
                 Text("No Selected Magazine")
             }
+            
+            VStack {
+                InfoPanel(scale: magazineScale, offset: magazineOffset)
+                    .animation(.default, value: magazineScale)
+                    .animation(.default, value: magazineOffset)
+                Spacer()
+            }
+            .padding()
         }
         .navigationTitle("Pinch & Zoom")
         .navigationBarTitleDisplayMode(.inline)
