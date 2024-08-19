@@ -73,11 +73,11 @@ public struct PinchView: View {
                 Spacer()
                 
                 Controller {
-                    magazineScale = 1
+                    magazineScale = max(1, magazineScale - 1)
                 } reset: {
                     reset()
                 } zoomIn: {
-                    magazineScale = 5
+                    magazineScale = min(5, magazineScale + 1)
                 }
 
             }
