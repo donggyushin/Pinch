@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import Domain
+import DataSource
+import Presentation
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Presentation.PinchView(magazineRepository: MagazineRepositoryData())
         }
-        .padding()
     }
 }
 

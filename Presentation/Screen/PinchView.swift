@@ -39,17 +39,17 @@ public struct PinchView: View {
                             magazineScale = 1
                         }
                     }
-                    .animation(.linear(duration: 10), value: isAnimating)
+                    .animation(.linear(duration: 1), value: isAnimating)
                     .animation(.spring, value: magazineScale)
+                    .onAppear {
+                        isAnimating = true
+                    }
             } else {
                 Text("No Selected Magazine")
             }
         }
         .navigationTitle("Pinch & Zoom")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            isAnimating = true
-        }
     }
 }
 
