@@ -13,6 +13,7 @@ public struct PinchView: View {
     @State private var isAnimating: Bool = false
     @State private var magazineScale: CGFloat = 1
     @State private var magazineOffset: CGSize = .zero
+    @State private var isShowingDrawer: Bool = false
     @StateObject var viewModel: PinchViewModel
     
     func reset() {
@@ -95,6 +96,25 @@ public struct PinchView: View {
 
             }
             .padding()
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Drawer(expanded: $isShowingDrawer, images: viewModel.thumbnails) { image in
+                        viewModel.selectedMagazine = image
+                    }
+                    .offset(x: isShowingDrawer ? 0 : 160)
+                    .animation(.default, value: isShowingDrawer)
+                }
+                .padding(.top, 100)
+                
+                Spacer()
+            }
+            .offset(x: 10)
+            .opacity(isAnimating ? 1 : 0)
+            .animation(.linear(duration: 1), value: isAnimating)
+            
+            
         }
         .navigationTitle("Pinch & Zoom")
         .navigationBarTitleDisplayMode(.inline)

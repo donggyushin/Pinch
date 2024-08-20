@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7009F7492C744623001123B0 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7009F7482C744623001123B0 /* Drawer.swift */; };
+		7009F74C2C744728001123B0 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7009F74B2C744728001123B0 /* Thumbnail.swift */; };
 		7038B7F02C7317F800F50654 /* PinchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038B7EF2C7317F800F50654 /* PinchApp.swift */; };
 		7038B7F22C7317F800F50654 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7038B7F12C7317F800F50654 /* ContentView.swift */; };
 		7038B7F42C7317F900F50654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7038B7F32C7317F900F50654 /* Assets.xcassets */; };
@@ -115,6 +117,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7009F7482C744623001123B0 /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		7009F74B2C744728001123B0 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		7038B7EC2C7317F800F50654 /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7038B7EF2C7317F800F50654 /* PinchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchApp.swift; sourceTree = "<group>"; };
 		7038B7F12C7317F800F50654 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7009F74A2C744717001123B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7009F74B2C744728001123B0 /* Thumbnail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7038B7E32C7317F800F50654 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +284,7 @@
 		7038B8352C731C9D00F50654 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7009F74A2C744717001123B0 /* Model */,
 				7038B8362C731C9D00F50654 /* Presentation.h */,
 				7090B4692C735622005AB942 /* Components */,
 				7038B8492C731DEA00F50654 /* Repository */,
@@ -301,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				7090B46C2C735BA7005AB942 /* Controller.swift */,
+				7009F7482C744623001123B0 /* Drawer.swift */,
 				7090B46A2C735638005AB942 /* InfoPanel.swift */,
 			);
 			path = Components;
@@ -535,7 +549,9 @@
 				7038B84B2C731E0E00F50654 /* MagazineRepositoryPreview.swift in Sources */,
 				7038B8462C731CDE00F50654 /* PinchView.swift in Sources */,
 				7090B46B2C735638005AB942 /* InfoPanel.swift in Sources */,
+				7009F7492C744623001123B0 /* Drawer.swift in Sources */,
 				7038B8482C731D0900F50654 /* PinchViewModel.swift in Sources */,
+				7009F74C2C744728001123B0 /* Thumbnail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
