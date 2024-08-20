@@ -284,9 +284,9 @@
 		7038B8352C731C9D00F50654 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7009F74A2C744717001123B0 /* Model */,
 				7038B8362C731C9D00F50654 /* Presentation.h */,
 				7090B4692C735622005AB942 /* Components */,
+				7009F74A2C744717001123B0 /* Model */,
 				7038B8492C731DEA00F50654 /* Repository */,
 				7038B8442C731CAA00F50654 /* Screen */,
 			);
